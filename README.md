@@ -1,3 +1,18 @@
+forked from [Yalantis/DisplaySwitcher](https://github.com/Yalantis/DisplaySwitcher)
+
+#### Changes
+* Update to swift 4.1
+* Support iPhone X
+* Versioning to 1.0.2
+
+#### Install
+
+```ruby
+pod 'DisplaySwitcher', :git => 'https://github.com/iamchiwon/DisplaySwitcher'
+```
+
+---
+
 # Display Switcher
 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/DisplaySwitcher.svg)](https://img.shields.io/cocoapods/v/DisplaySwitcher.svg)

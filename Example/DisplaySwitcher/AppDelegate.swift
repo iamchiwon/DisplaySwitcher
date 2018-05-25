@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.titleTextAttributes = ([NSFontAttributeName: UIFont(name: "Dosis-SemiBold", size: 21)!,
-                NSForegroundColorAttributeName: UIColor.navigationBarTintColor()])
+        navigationBarAppearace.titleTextAttributes = [
+            NSAttributedStringKey.font: UIFont(name: "Dosis-SemiBold", size: 21)!,
+            NSAttributedStringKey.foregroundColor: UIColor.navigationBarTintColor()
+        ]
         UINavigationBar.appearance().barTintColor = UIColor.navigationBarBackgroundColor()
         navigationBarAppearace.isTranslucent = false
         

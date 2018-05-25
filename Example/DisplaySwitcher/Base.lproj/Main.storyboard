@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KUR-je-Sh7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KUR-je-Sh7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +14,7 @@
             <objects>
                 <navigationController id="KUR-je-Sh7" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wrw-Tc-cnM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -83,13 +83,13 @@
                             <constraint firstAttribute="trailing" secondItem="H8x-eM-1GS" secondAttribute="trailing" id="hBA-cJ-QYt"/>
                             <constraint firstAttribute="trailing" secondItem="Oi6-wZ-g76" secondAttribute="trailing" id="hZo-zh-E96"/>
                             <constraint firstItem="H8x-eM-1GS" firstAttribute="top" secondItem="Oi6-wZ-g76" secondAttribute="bottom" id="pPq-nq-yXI"/>
-                            <constraint firstItem="hZF-AP-KvR" firstAttribute="top" secondItem="H8x-eM-1GS" secondAttribute="bottom" id="tgn-L8-bqe"/>
+                            <constraint firstAttribute="bottom" secondItem="H8x-eM-1GS" secondAttribute="bottom" id="tgn-L8-bqe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Friends" id="IHB-pf-cHm">
                         <barButtonItem key="rightBarButtonItem" width="60" id="R8D-p0-NGA">
                             <view key="customView" contentMode="scaleToFill" id="70Y-rH-SbY" userLabel="Container View">
-                                <rect key="frame" x="288" y="5" width="71" height="33"/>
+                                <rect key="frame" x="288" y="5.5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xw3-Ez-W1O" userLabel="Switch Layout Button">
