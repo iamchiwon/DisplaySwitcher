@@ -6,8 +6,8 @@
 //  Copyright © 2016 Yalantis. All rights reserved.
 //
 
-import UIKit
 import DisplaySwitcher
+import UIKit
 
 private let animationDuration: TimeInterval = 0.3
 
@@ -16,9 +16,9 @@ private let gridLayoutStaticCellHeight: CGFloat = 165
 
 class UserViewController: UIViewController {
     
-    @IBOutlet fileprivate weak var collectionView: UICollectionView!
-    @IBOutlet fileprivate weak var searchBar: UISearchBar!
-    @IBOutlet fileprivate weak var rotationButton: SwitchLayoutButton!
+    @IBOutlet fileprivate var collectionView: UICollectionView!
+    @IBOutlet fileprivate var searchBar: UISearchBar!
+    @IBOutlet fileprivate var rotationButton: SwitchLayoutButton!
     
     fileprivate var tap: UITapGestureRecognizer!
     fileprivate var users = UserDataProvider().generateFakeUsers()
@@ -31,7 +31,7 @@ class UserViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         
         searchUsers = users
@@ -42,7 +42,7 @@ class UserViewController: UIViewController {
     // MARK: - Private methods
     fileprivate func setupCollectionView() {
         collectionView.collectionViewLayout = listLayout
-        collectionView.register(UserCollectionViewCell.cellNib, forCellWithReuseIdentifier:UserCollectionViewCell.id)
+        collectionView.register(UserCollectionViewCell.cellNib, forCellWithReuseIdentifier: UserCollectionViewCell.id)
     }
     
     // MARK: - Actions
@@ -66,17 +66,17 @@ class UserViewController: UIViewController {
     @IBAction func tapRecognized() {
         view.endEditing(true)
     }
-
+    
 }
 
-extension UserViewController {
+extension UserViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     // MARK: - UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchUsers.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCollectionViewCell.id, for: indexPath) as! UserCollectionViewCell
         if layoutState == .grid {
             cell.setupGridLayoutConstraints(1, cellWidth: cell.frame.width)
@@ -114,13 +114,13 @@ extension UserViewController {
         if searchText.isEmpty {
             searchUsers = users
         } else {
-            searchUsers = searchUsers.filter { return $0.name.contains(searchText) }
+            searchUsers = searchUsers.filter { $0.name.contains(searchText) }
         }
-      
+        
         collectionView.reloadData()
     }
     
-    func collectionView(_ collectionView: UICollectionView,didSelectItemAtIndexPath indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
         print("Hi \((indexPath as NSIndexPath).row)")
     }
     
@@ -132,9 +132,8 @@ extension UserViewController {
         view.removeGestureRecognizer(tap)
     }
     
-    func handleTap() {
+    @objc func handleTap() {
         view.endEditing(true)
     }
     
 }
-    
